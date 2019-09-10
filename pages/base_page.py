@@ -18,7 +18,7 @@ class BasePage():
         return True
 
     def is_login_url(self):
-        login_url = self.browser.current_url('http://selenium1py.pythonanywhere.com/')
+        login_url = self.browser.current_url
         if 'login' in login_url:
             return True
         else:
