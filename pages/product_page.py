@@ -27,7 +27,6 @@ class ProductPage(BasePage):
         product_catalog_name = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME).text
         product_name_in_product_added_message = self.browser.find_element(
             *ProductPageLocators.PRODUCT_NAME_IN_ADDED_TO_BASKET_MESSAGE).text
-        print(product_name_in_product_added_message)
         assert product_catalog_name == product_name_in_product_added_message, \
             'Product in catalog and product in basket is different'
 
