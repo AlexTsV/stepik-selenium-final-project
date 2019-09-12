@@ -1,5 +1,6 @@
 from .base_page import BasePage
 from .locators import ProductPageLocators
+from .locators import BasePageLocators
 
 
 class ProductPage(BasePage):
@@ -36,3 +37,7 @@ class ProductPage(BasePage):
 
     def success_message_should_disappear(self):
         assert self.is_disappeared(*ProductPageLocators.PRODUCT_ADDED_MESSAGE), "Success message does not disappeared"
+
+    def go_to_login_page_from_product_page(self):
+        login_link = self.browser.find_element(*BasePageLocators.LOGIN_LINK)
+        login_link.click()
