@@ -10,7 +10,7 @@ class LoginPageLocators():
     LOGIN_FORM = (By.CSS_SELECTOR, '#login_form')
 
 
-class BasketPageLocators():
+class ProductPageLocators():
     ADD_TO_BASKET_BUTTON = (By.CLASS_NAME, "btn.btn-lg.btn-primary.btn-add-to-basket")
     PRODUCT_ADDED_MESSAGE = (By.CSS_SELECTOR, "#messages > div:nth-child(1) > div")
     PRODUCT_PRICE_MESSAGE = (
