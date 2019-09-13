@@ -76,3 +76,21 @@ def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
     page.go_to_basket_from_navbar()
     page.should_be_no_items_in_basket()
     page.should_be_message_basket_is_empty()
+
+
+class TestUserAddToBasketFromProductPage():
+    def test_user_cant_see_success_message(browser):
+        page = ProductPage(browser, link)
+        page.open()
+        page.should_not_be_success_message()
+
+    def test_user_can_add_product_to_basket(browser):
+        page = ProductPage(browser, link)
+        page.open()
+        page.should_be_add_to_basket_button()
+        page.add_product_to_basket()
+        page.solve_quiz_and_get_code()
+        page.should_be_product_added_message()
+        page.product_catalog_name_must_math_product_basket_name()
+        page.should_be_product_price_message()
+        page.catalog_price_must_be_equal_basket_price()
