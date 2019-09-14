@@ -23,7 +23,7 @@ class ProductPage(BasePage):
         basket_price = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE_MESSAGE).text
         assert product_price == basket_price.split(" ")[-1], "Catalog price and basket price is different"
 
-    def product_catalog_name_must_math_product_basket_name(self):
+    def product_catalog_name_must_match_product_basket_name(self):
         product_catalog_name = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME).text
         product_name_in_product_added_message = self.browser.find_element(
             *ProductPageLocators.PRODUCT_NAME_IN_ADDED_TO_BASKET_MESSAGE).text

@@ -1,8 +1,8 @@
+import pytest
 from selenium.common.exceptions import NoSuchElementException, TimeoutException, NoAlertPresentException
 from selenium.webdriver.support import expected_conditions as EC
 from .locators import BasePageLocators
 import math
-import time
 
 from selenium.webdriver.support.wait import WebDriverWait
 
